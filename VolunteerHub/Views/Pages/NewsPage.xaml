@@ -1,0 +1,33 @@
+﻿<Page x:Class="VolunteerHub.Views.Pages.NewsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VolunteerHub.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="NewsPage">
+
+    <Border Background="#DCC6E0" Padding="20" CornerRadius="25">
+        <Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="ContentStackPanel" Margin="0,0,0,50">
+                    <!-- Initial Title Block -->
+                    <TextBlock Text="Заголовок" FontSize="20" FontWeight="Bold" Margin="0,10,0,5"/>
+                    <TextBox x:Name="TitleTextBox" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" Padding="5" BorderBrush="#7C4DFF" BorderThickness="2" />
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Button Content="Добавить заголовок" FontSize="14" Padding="10" Margin="0,10,10,0" Background="#7C4DFF" Foreground="White" Click="AddTitleBlock_Click"/>
+                <Button Content="Добавить подзаголовок" FontSize="14" Padding="10" Margin="0,10,10,0" Background="#7C4DFF" Foreground="White" Click="AddSubtitleBlock_Click"/>
+                <Button Content="Добавить текст" FontSize="14" Padding="10" Margin="0,10,10,0" Background="#7C4DFF" Foreground="White" Click="AddTextBlock_Click"/>
+                <Button Content="Добавить изображение" FontSize="14" Padding="10" Margin="0,10,10,0" Background="#7C4DFF" Foreground="White" Click="AddImageBlock_Click"/>
+                <Button Content="Удалить последний" FontSize="14" Padding="10" Margin="0,10,10,0" Background="#FF4081" Foreground="White" Click="RemoveLastBlock_Click"/>
+
+                <Button Content="Сохранить" FontSize="14" Padding="10" Margin="0,10,0,0" Background="#7C4DFF" Foreground="White" Click="SaveButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+
+
+</Page>

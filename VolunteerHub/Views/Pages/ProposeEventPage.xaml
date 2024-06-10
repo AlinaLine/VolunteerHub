@@ -1,0 +1,92 @@
+﻿<Page x:Class="VolunteerHub.Views.Pages.ProposeEventPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VolunteerHub.Views.Pages"
+      mc:Ignorable="d" FontSize="16"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProposeEventPage">
+
+    <Border Background="#DCC6E0" CornerRadius="25" Padding="20" >
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Предложить свое мероприятие" 
+                           FontSize="24" FontWeight="Bold" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,10,0,20"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="660">
+                <Label Content="Фамилия:" Style="{StaticResource CustomLabel}"/>
+                <TextBox x:Name="NameTextBox" IsReadOnly="True" Margin="0,0,10,0" Style="{StaticResource CustomTextBox}">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Label Content="Имя:" Style="{StaticResource CustomLabel}"/>
+                <TextBox x:Name="LastnameTextBox" IsReadOnly="True" Style="{StaticResource CustomTextBox}" >
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </StackPanel>
+
+            <StackPanel Width="660" Orientation="Horizontal">
+                <Label Content="Тема мероприятия" Style="{StaticResource CustomLabel}"/>
+                <TextBox x:Name="ThemeTextBox" Style="{StaticResource CustomTextBox}" Width="498">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Width="660" Margin="0,10">
+                <Label Content="Описание меропрития:"  Style="{StaticResource CustomLabel}"/>
+                <TextBox x:Name="DescriptionTextBox" Style="{StaticResource CustomTextBox}" Height="100" Width="470" TextWrapping="Wrap" AcceptsReturn="True">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="660">
+                <Label Content="Предлагаема дата:" Style="{StaticResource CustomLabel}"/>
+                <DatePicker x:Name="DateEvent" Text="test" Margin="0,0,10,0" Width="200">
+                    <DatePicker.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <Label Content="Адрес:" Style="{StaticResource CustomLabel}"/>
+                <TextBox x:Name="AdressTextBox" Style="{StaticResource CustomTextBox}" Width="225" >
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </StackPanel>
+
+
+            <!-- Submit Button -->
+            <Button Content="Предложить" Width="250" x:Name="SubmitButton" Click="SubmitButton_Click" Height="35" FontSize="16" Margin="0,20" HorizontalAlignment="Center" 
+                        Background="#7C4DFF" 
+                        Foreground="White" 
+                        BorderBrush="#7C4DFF" BorderThickness="2">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Border>
+</Page>

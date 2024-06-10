@@ -1,0 +1,137 @@
+﻿<Page x:Class="VolunteerHub.Views.Pages.ProfileUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VolunteerHub.Views.Pages"
+      mc:Ignorable="d" 
+      FontSize="20"
+      Loaded="Page_Loaded"
+      d:DesignHeight="600" d:DesignWidth="1080"
+      Title="ProfileUserPage">
+
+    <Border CornerRadius="25" Background="#DCC6E0">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <StackPanel>
+                    <Label Content="Имя:" Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBox FontSize="18" TextAlignment="Center" Width="200" x:Name="txbFirstname" IsEnabled="False" Style="{StaticResource CustomTextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>                
+                </StackPanel>
+                <StackPanel Margin="10,0,0,0">
+                    <Label Content="Фамилия:" Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBox FontSize="18" TextAlignment="Center" Width="300" x:Name="txbLastname" IsEnabled="False" Style="{StaticResource CustomTextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Margin="0,10,0,0">
+                <Label Content="Пол:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <ComboBox Margin="5" x:Name="cmbGender" DisplayMemberPath="GenderName" SelectedValuePath="GenderID" IsEnabled="False">
+                </ComboBox>
+            </StackPanel>
+            
+            
+            
+            <!--Поля для навыков и предложения-->
+            <StackPanel Margin="10,0,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel>
+                    <Label Content="Навыки:" Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBox x:Name="txbUserSkills" TextWrapping="Wrap" Height="100" IsEnabled="False" Style="{StaticResource CustomTextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Margin="5,0,0,0">
+                    <Label Content="Предпочтения:" Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBox x:Name="txbPreferences" TextWrapping="Wrap" Height="100" IsEnabled="False" Style="{StaticResource CustomTextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10">
+                <StackPanel>
+                    <Label Content="Имя пользователя:"  Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBox FontSize="18" TextAlignment="Center" Width="300" x:Name="txbUsername" IsEnabled="False" Style="{StaticResource CustomTextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Margin="5,0,0,0">
+                    <Label Content="Пароль:" Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBox FontSize="18" TextAlignment="Center" Width="200" x:Name="txbPassword" IsEnabled="False" Style="{StaticResource CustomTextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10">
+                <StackPanel>
+                    <Label Content="Электронная почта:" Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBox FontSize="18" TextAlignment="Center" Width="300" x:Name="txbEmail" IsEnabled="False" Style="{StaticResource CustomTextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Margin="5,0,0,0">
+                    <Label Content="Номер телефона:" Foreground="WhiteSmoke" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBox FontSize="18" TextAlignment="Center" Width="200" PreviewTextInput="txbPhone_PreviewTextInput" x:Name="txbPhone" IsEnabled="False" Style="{StaticResource CustomTextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
+            </StackPanel>
+
+
+            <!--Панель с кнопками-->
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                <Button Content="Изменить" x:Name="buttonEdit" Click="buttonEdit_Click" Width="205" Margin="0,0,100,0" Background="#8E44AD">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Сохранить" x:Name="btnSave" Click="btnSave_Click" IsEnabled="False" Width="205" Background="#8E44AD">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Page>

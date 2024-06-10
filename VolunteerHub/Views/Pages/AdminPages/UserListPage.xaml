@@ -1,0 +1,45 @@
+﻿<Page x:Class="VolunteerHub.Views.Pages.AdminPages.UserListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VolunteerHub.Views.Pages.AdminPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1080"
+      Title="UserListPage">
+
+    <Border CornerRadius="25" Background="#DCC6E0" Padding="10">
+        <Grid>
+            <StackPanel>
+                <DataGrid x:Name="UsersDataGrid" MouseDoubleClick="UsersDataGrid_MouseDoubleClick" Background="#DCC6E0"  BorderThickness="0" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="30"/>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Имя пользователя" Binding="{Binding Username}" Width="*"/>
+                        <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Width="*"/>
+                        <DataGridTextColumn Header="Навыки" Binding="{Binding Skills}" Width="*"/>
+                        <DataGridTextColumn Header="Предпочтения" Binding="{Binding Preferences}" Width="*"/>
+                        <DataGridTextColumn Header="Контактная информация" Binding="{Binding ContactInfo}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <Button Content="Удалить" VerticalAlignment="Bottom" Background="Red" Name="DeleteUser" Click="DeleteUser_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Border>
+</Page>

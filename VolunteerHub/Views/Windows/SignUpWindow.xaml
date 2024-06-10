@@ -1,0 +1,64 @@
+﻿<Window x:Class="VolunteerHub.Views.Windows.SignUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VolunteerHub.Views.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="VHub Registration" Height="600" Width="600"
+        Background="#DCC6E0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Логотип и заголовок окна -->
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" Margin="20">
+            <TextBlock Text="VHub" FontSize="24" FontWeight="Bold" Foreground="#8E44AD" HorizontalAlignment="Center"/>
+            <TextBlock Text="Регистрация нового пользователя" FontSize="18" Foreground="Gray" Padding="5" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Поля для ввода данных и кнопки -->
+        <ScrollViewer Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+                <Label Content="Имя:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <TextBox x:Name="txbFirstname" Width="250" Margin="5" Padding="3" FontSize="14"/>
+
+                <Label Content="Фамилия:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <TextBox x:Name="txbLastname" Width="250" Margin="5" Padding="3" FontSize="14"/>
+
+                <Label Content="Имя пользователя:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <TextBox x:Name="txbUsername" PreviewTextInput="txbUsername_PreviewTextInput" Width="250" Margin="5" Padding="3" FontSize="14"/>
+
+                <Label Content="Пароль:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <PasswordBox x:Name="psbPasswordBox" Width="250" Margin="5" Padding="3" FontSize="14"/>
+ 
+                <Label Content="Email:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <TextBox x:Name="txbEmail" PreviewTextInput="txbUsername_PreviewTextInput" Width="250" Margin="5" Padding="3" FontSize="14"/>
+
+                <Label Content="Навыки:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <TextBox x:Name="txbSkills" Width="250" Margin="5" Padding="3" FontSize="14" TextWrapping="Wrap" AcceptsReturn="True" Height="100"/>
+
+                <Label Content="Предпочтения:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <TextBox x:Name="txbPreferences" Width="250" Margin="5" Padding="3" FontSize="14" TextWrapping="Wrap" AcceptsReturn="True" Height="100"/>
+
+                <Label Content="Контактная информация:" Foreground="WhiteSmoke" FontWeight="Bold"/>
+                <TextBox x:Name="txbContactInfo" Width="250" Margin="5" Padding="3" FontSize="14" TextWrapping="Wrap" AcceptsReturn="True" Height="100"/>
+
+                <Button x:Name="buttonSignUp" Click="buttonSignUp_Click" Content="Зарегистрироваться" Width="250" Background="#8E44AD" Foreground="White" BorderBrush="Transparent" Margin="5" Padding="3" FontSize="14">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Подвал с дополнительной информацией или ссылками -->
+        <TextBlock MouseDown="TextBlock_MouseDown" Grid.Row="2" Text="Уже зарегистрированы? Войти" FontSize="12" Foreground="#8E44AD" HorizontalAlignment="Center" Margin="10" Cursor="Hand"/>
+    </Grid>
+</Window>

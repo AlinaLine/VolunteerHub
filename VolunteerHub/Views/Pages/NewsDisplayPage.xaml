@@ -1,0 +1,14 @@
+﻿<Page x:Class="VolunteerHub.Views.Pages.NewsDisplayPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="NewsDisplayPage" Height="600" Width="800">
+    <Border Background="#DCC6E0" CornerRadius="25">
+        <Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="10">
+                <StackPanel x:Name="ContentStackPanel" Margin="0,0,0,50">
+                    
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</Page>
